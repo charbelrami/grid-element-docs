@@ -1,0 +1,21 @@
+{
+  "name": "grid-element-docs",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Charbel Rami"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.2.3",
+    "iron-elements": "~1.0.7",
+    "paper-elements": "~1.0.7",
+    "grid-element": "~0.4.0"
+  }
+}

@@ -68,9 +68,9 @@ gulp.task('css', function () {
   .pipe(sourcemaps.init())
   .pipe(postcss([
     atImport({path: ['src/css/style.css']}),
+    cssnano({discardComments: {removeAll: true}}),
     cssnext,
-    nested,
-    cssnano
+    nested
   ]))
   .pipe(sourcemaps.write('.'))
   .pipe(size({title: 'css'}))

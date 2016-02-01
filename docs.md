@@ -1,5 +1,8 @@
 # Grid Element
 
+Grid?
+> "There's an element for that"
+
 ![Grid Element Bower version](https://img.shields.io/bower/v/grid-element.svg)
 ![Grid Element Bower license](https://img.shields.io/bower/l/grid-element.svg)
 
@@ -9,6 +12,7 @@
 **This documentation is a work in progress**
 
 ## Contents
+- [Introduction](#introduction)
 - [Overview](#overview)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -32,6 +36,20 @@
   - [Gutter size](#gutter-size)
   - [Specific gutter size](#specific-gutter-size)
 - [Browser support](#browser-support)
+
+## Introduction
+
+Grid Element is:
+
+- A custom element built with [Polymer](https://github.com/Polymer/polymer). Thus, it is:
+  - declarative
+  - meaningful
+  - modular
+  - componentized
+  - encapsulated
+  - reusable
+- An [infinite grid](#infinite-grid) based on [Flexbox](https://drafts.csswg.org/css-flexbox/)
+- Responsive with [customizable media query](#custom-media-query)
 
 ## Overview
 
@@ -158,17 +176,75 @@ $ polyserve
 
 ## Public API
 
+Grid Element can be customized both through its [declared
+properties](https://www.polymer-project.org/1.0/docs/devguide/properties.html)
+and through its [Custom CSS Properties](https://drafts.csswg.org/css-variables/) —
+which are part of the element API — while remaining within the scope of the
+element, without ever exposing the internal implementation.
+
+On markup, declared properties are represented by attributes. An attribute may
+be included with no value assigned to it. In this case, its corresponding Custom
+CSS Property is used or, if not defined, default value is assumed instead.
+Either can be overwritten by setting a value to the attribute.
+
 ### CSS Custom Properties
 
-TODO
+```css
+/**
+ * Gutter size
+ * Default: 10px
+ */
+--grid-gutter
+
+/**
+ * Inner horizontal gutter size
+ * Default: --grid-gutter
+ */
+--grid-gutter-hi
+
+/**
+ * Outer horizontal gutter size
+ * Default: --grid-gutter
+ */
+--grid-gutter-ho
+
+/**
+ * Inner vertical gutter size
+ * Default: --grid-gutter
+ */
+--grid-gutter-vi
+
+/**
+ * Outer vertical gutter size
+ * Default: --grid-gutter
+ */
+--grid-gutter-vo
+```
 
 ### grid-element
 
-TODO
+property | type | initial value | description
+--- | --- | --- | ---
+`mq` | String | `'(min-width: 48em)'` | Media query.
+`ga` | String | `--grid-gutter` or `10px` | All gutters. Equivalent to `ghi gho gvi gvo`.
+`gs` | String | `--grid-gutter` or `10px` | Gutter size. Defines a common size for multiple gutter attributes.
+`ghi` | String | `--grid-gutter-hi` or `--grid-gutter` or `10px` | Inner horizontal gutter size.
+`gho` | String | `--grid-gutter-ho` or `--grid-gutter` or `10px` | Outer horizontal gutter size.
+`gvi` | String | `--grid-gutter-vi` or `--grid-gutter` or `10px` | Inner vertical gutter size.
+`gvo` | String | `--grid-gutter-vo` or `--grid-gutter` or `10px` | Outer vertical gutter size.
+`start` | Boolean | `false` | Aligns columns in the top of the grid.
+`center` | Boolean | `false` | Aligns columns in the center of the grid.
+`end` | Boolean | `false` | Aligns columns in the bottom of the grid.
 
 ### grid-col
 
-TODO
+property | type | initial value | description
+--- | --- | --- | ---
+`s` | Number | `1` | Column relative stretching factor.
+`start` | Boolean | `false` | Aligns itself to the top of the grid.
+`center` | Boolean | `false` | Aligns itself to the center of the grid.
+`end` | Boolean | `false` | Aligns itself to the bottom of the grid.
+`stretch` | Boolean | `true` | **Default**. Stretches itself to match the height of the grid.
 
 ## Infinite grid
 
@@ -907,5 +983,5 @@ TODO
 ---
 
 <footer class="page-footer">
-  <iron-icon class="copyright-icon" icon="icons:copyright"></iron-icon> 2016 Charbel Rami. All rights reserved. Source code licensed under [the MIT License](https://raw.githubusercontent.com/charbelrami/grid-element/master/license.txt). Documentation licensed under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+  <iron-icon class="copyright-icon" icon="icons:copyright"></iron-icon> 2016 [Charbel Rami](https://twitter.com/charbelrami). All rights reserved. Source code licensed under [the MIT License](https://raw.githubusercontent.com/charbelrami/grid-element/master/license.txt). Documentation licensed under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 </footer>

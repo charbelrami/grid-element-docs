@@ -26,13 +26,11 @@ pre, code {
 
 grid-element {
   background-color: #e0e0e0;
-  border-radius: 3px;
 }
 
 grid-col {
   background-color: #f0f0f0;
   padding: 16px;
-  border-radius: 3px;
   font-size: .75em;
 }
 

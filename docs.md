@@ -189,37 +189,13 @@ Either can be overwritten by setting a value to the attribute.
 
 ### CSS Custom Properties
 
-```css
-/**
- * Gutter size
- * Default: 10px
- */
---grid-gutter
-
-/**
- * Inner horizontal gutter size
- * Default: --grid-gutter
- */
---grid-gutter-hi
-
-/**
- * Outer horizontal gutter size
- * Default: --grid-gutter
- */
---grid-gutter-ho
-
-/**
- * Inner vertical gutter size
- * Default: --grid-gutter
- */
---grid-gutter-vi
-
-/**
- * Outer vertical gutter size
- * Default: --grid-gutter
- */
---grid-gutter-vo
-```
+custom property | initial value | description
+--- | --- | ---
+`--grid-gutter` | `10px` | Gutter size.
+`--grid-gutter-hi` | `--grid-gutter` | Inner horizontal gutter size.
+`--grid-gutter-ho` | `--grid-gutter` | Outer horizontal gutter size.
+`--grid-gutter-vi` | `--grid-gutter` | Inner vertical gutter size.
+`--grid-gutter-vo` | `--grid-gutter` | Outer vertical gutter size.
 
 ### grid-element
 
